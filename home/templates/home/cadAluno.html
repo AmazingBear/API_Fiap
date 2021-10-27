@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{% block Titulo%} Cadastro Aluno {% endblock%}
+
+{% block container%}
+    <form action="{% url 'cadAluno' %}" method="post">
+        {% csrf_token %}
+      <div class="mb-3">
+        <label for="1" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="1" aria-describedby="emailHelp" name="nome">
+      </div>
+      <div class="mb-3">
+        <label for="2" class="form-label">RA</label>
+        <input type="text" class="form-control" id="2" name="ra">
+      </div>
+      <label for="turma">Escolha a Turma:</label>
+        <select class="form-control" name="turma" id="turma">
+          {% for turmas in dados %}
+            <option value="{{turmas.id}}">{{turmas.nome}}</option>
+          {% endfor %}
+        </select>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
