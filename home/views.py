@@ -28,13 +28,13 @@ class TurmaAPIView(APIView):
         serializer = TurmaSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        usuario = Turma.objects.get(id=pk)
-        serializer = TurmaSerializer(usuario, data=request.data)
+        turma = Turma.objects.get(id=pk)
+        serializer = TurmaSerializer(turma, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
@@ -50,180 +50,380 @@ class AlunoAPIView(APIView):
     API Aluno
     """
 
-    def get(self, request):
-        aluno = Aluno.objects.all()
-        serializer = AlunoSerializer(aluno, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            aluno = Aluno.objects.all()
+            serializer = AlunoSerializer(aluno, many=True)
+            return Response(serializer.data)
+        else:
+            aluno = Aluno.objects.get(id=pk)
+            serializer = AlunoSerializer(aluno)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = AlunoSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        aluno = Aluno.objects.get(id=pk)
+        serializer = AlunoSerializer(aluno, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        aluno = Aluno.objects.get(id=pk)
+        aluno.delete()
+        return Response('Aluno Apagado')
 
 class ColaboradorAPIView(APIView):
     """
     API Colaborador
     """
 
-    def get(self, request):
-        colaborador = Colaborador.objects.all()
-        serializer = ColaboradorSerializer(colaborador, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            colab = Colaborador.objects.all()
+            serializer = ColaboradorSerializer(colab, many=True)
+            return Response(serializer.data)
+        else:
+            colab = Colaborador.objects.get(id=pk)
+            serializer = ColaboradorSerializer(colab)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = ColaboradorSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        colab = Colaborador.objects.get(id=pk)
+        serializer = ColaboradorSerializer(colab, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        colab = Colaborador.objects.get(id=pk)
+        colab.delete()
+        return Response('Colaborador Apagado')
 
 class MateriaAPIView(APIView):
     """
     API Materia
     """
 
-    def get(self, request):
-        materia = Materia.objects.all()
-        serializer = MateriaSerializer(materia, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            materia = Materia.objects.all()
+            serializer = MateriaSerializer(materia, many=True)
+            return Response(serializer.data)
+        else:
+            materia = Materia.objects.get(id=pk)
+            serializer = MateriaSerializer(materia)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = MateriaSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        materia = Materia.objects.get(id=pk)
+        serializer = MateriaSerializer(materia, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        materia = Materia.objects.get(id=pk)
+        materia.delete()
+        return Response('Colaborador Apagado')
 
 class AssinaturaAPIView(APIView):
     """
     API Assinatura
     """
 
-    def get(self, request):
-        assinatura = Assinatura.objects.all()
-        serializer = AssinaturaSerializer(assinatura, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            assinatura = Assinatura.objects.all()
+            serializer = AssinaturaSerializer(assinatura, many=True)
+            return Response(serializer.data)
+        else:
+            assinatura = Assinatura.objects.get(id=pk)
+            serializer = AssinaturaSerializer(assinatura)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = AssinaturaSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        assinatura = Assinatura.objects.get(id=pk)
+        serializer = AssinaturaSerializer(assinatura, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        assinatura = Assinatura.objects.get(id=pk)
+        assinatura.delete()
+        return Response('Assinatura Apagada')
 
 class FiapAPIView(APIView):
     """
     API Fiap
     """
 
-    def get(self, request):
-        fiap = Fiap.objects.all()
-        serializer = FiapSerializer(fiap, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            fiap = Fiap.objects.all()
+            serializer = FiapSerializer(fiap, many=True)
+            return Response(serializer.data)
+        else:
+            fiap = Fiap.objects.get(id=pk)
+            serializer = FiapSerializer(fiap)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = FiapSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        fiap = Fiap.objects.get(id=pk)
+        serializer = FiapSerializer(fiap, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        fiap = Fiap.objects.get(id=pk)
+        fiap.delete()
+        return Response('Fiap Apagada')
 
 class FrequenciaAPIView(APIView):
     """
     API Frequencia
     """
 
-    def get(self, request):
-        frequencia = Frequencia.objects.all()
-        serializer = FrequenciaSerializer(frequencia, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            frequencia = Frequencia.objects.all()
+            serializer = FrequenciaSerializer(frequencia, many=True)
+            return Response(serializer.data)
+        else:
+            frequencia = Frequencia.objects.get(id=pk)
+            serializer = FrequenciaSerializer(frequencia)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = FrequenciaSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        frequencia = Frequencia.objects.get(id=pk)
+        serializer = FrequenciaSerializer(frequencia, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        frequencia = Frequencia.objects.get(id=pk)
+        frequencia.delete()
+        return Response('Frequencia Apagada')
 
 class AproveitamentoAPIView(APIView):
     """
     API Aproveitamento
     """
 
-    def get(self, request):
-        aproveitamento = Aproveitamento.objects.all()
-        serializer = AproveitamentoSerializer(aproveitamento, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            aproveitamento = Aproveitamento.objects.all()
+            serializer = AproveitamentoSerializer(aproveitamento, many=True)
+            return Response(serializer.data)
+        else:
+            aproveitamento = Aproveitamento.objects.get(id=pk)
+            serializer = AproveitamentoSerializer(aproveitamento)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = AproveitamentoSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        aproveitamento = Aproveitamento.objects.get(id=pk)
+        serializer = AproveitamentoSerializer(aproveitamento, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        aproveitamento = Aproveitamento.objects.get(id=pk)
+        aproveitamento.delete()
+        return Response('Aproveitamento Apagado')
 
 class AprendizagemAPIView(APIView):
     """
     API Aprendizagem
     """
 
-    def get(self, request):
-        aprendizagem = Aprendizagem.objects.all()
-        serializer = AprendizagemSerializer(aprendizagem, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            aprendi = Aprendizagem.objects.all()
+            serializer = AprendizagemSerializer(aprendi, many=True)
+            return Response(serializer.data)
+        else:
+            aprendi = Aprendizagem.objects.get(id=pk)
+            serializer = AprendizagemSerializer(aprendi)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = AprendizagemSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        aprendi = Aprendizagem.objects.get(id=pk)
+        serializer = AprendizagemSerializer(aprendi, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        aprendi = Aprendizagem.objects.get(id=pk)
+        aprendi.delete()
+        return Response('Aprendizagem Apagada')
 
 class OcorrenciaAPIView(APIView):
     """
     API Ocorrencia
     """
 
-    def get(self, request):
-        ocorrencia = Ocorrencia.objects.all()
-        serializer = OcorrenciaSerializer(ocorrencia, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            ocorrencia = Ocorrencia.objects.all()
+            serializer = OcorrenciaSerializer(ocorrencia, many=True)
+            return Response(serializer.data)
+        else:
+            ocorrencia = Ocorrencia.objects.get(id=pk)
+            serializer = OcorrenciaSerializer(ocorrencia)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = OcorrenciaSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        ocorrencia = Ocorrencia.objects.get(id=pk)
+        serializer = OcorrenciaSerializer(ocorrencia, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        ocorrencia = Ocorrencia.objects.get(id=pk)
+        ocorrencia.delete()
+        return Response('Ocorrencia Apagada')
 
 class ObservacaoAPIView(APIView):
     """
     API Observacao
     """
 
-    def get(self, request):
-        observacao = Observacao.objects.all()
-        serializer = ObservacaoSerializer(observacao, many=True)
-        return Response(serializer.data)
+    def get(self, request, pk=''):
+        if pk == '':
+            observa = Observacao.objects.all()
+            serializer = ObservacaoSerializer(observa, many=True)
+            return Response(serializer.data)
+        else:
+            observa = Observacao.objects.get(id=pk)
+            serializer = ObservacaoSerializer(observa)
+            return Response(serializer.data)
+
 
     def post(self, request):
         serializer = ObservacaoSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-        #return Response({"msg": "Inserido com sucesso"})
-        return Response({"id": serializer.data['id']})
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response({"msg": "Inserido com sucesso"})
+        #return Response({"id": serializer.data['id']})
+        # return Response(serializer.data, status=status.HTTP_201_
+
+    def put(self, request, pk=''):
+        observa = Observacao.objects.get(id=pk)
+        serializer = ObservacaoSerializer(observa, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+    def delete(self, request, pk=''):
+        observa = Observacao.objects.get(id=pk)
+        observa.delete()
+        return Response('Observacao Apagada')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def home(request):
     return render(request, 'home/index.html')

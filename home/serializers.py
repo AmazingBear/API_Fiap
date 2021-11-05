@@ -41,7 +41,7 @@ class AssinaturaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assinatura
         fields = [
-            'docene',
+            'docente',
             'coordenador',
             'social',
             'aluno',
@@ -52,7 +52,7 @@ class FiapSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fiap
         fields = [
-            'progressor',
+            'progresso',
             'aluno',
             'turma',
             'dataInicio',
@@ -76,7 +76,7 @@ class AproveitamentoSerializer(serializers.ModelSerializer):
         fields = [
             'materia',
             'notamedia',
-            'notaluno',
+            'notaaluno',
             'notarec',
             'fiap',
         ]
