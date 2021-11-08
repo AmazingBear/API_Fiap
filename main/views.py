@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Aluno, Colaborador, Turma, Fiap, Materia, Frequencia, Assinatura, Observacao, Ocorrencia, \
+from .models import Aluno, Usuario, Turma, Fiap, Materia, Frequencia, Assinatura, Observacao, Ocorrencia, \
     Aprendizagem, Aproveitamento
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -88,17 +88,17 @@ class ColaboradorAPIView(APIView):
 
     def get(self, request, pk=''):
         if pk == '':
-            colab = Colaborador.objects.all()
-            serializer = ColaboradorSerializer(colab, many=True)
+            colab = Usuario.objects.all()
+            serializer = UsuarioSerializer(colab, many=True)
             return Response(serializer.data)
         else:
-            colab = Colaborador.objects.get(id=pk)
-            serializer = ColaboradorSerializer(colab)
+            colab = Usuario.objects.get(id=pk)
+            serializer = UsuarioSerializer(colab)
             return Response(serializer.data)
 
 
     def post(self, request):
-        serializer = ColaboradorSerializer(data=request.data, many=True)
+        serializer = UsuarioSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response({"msg": "Inserido com sucesso"})
@@ -106,14 +106,14 @@ class ColaboradorAPIView(APIView):
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        colab = Colaborador.objects.get(id=pk)
-        serializer = ColaboradorSerializer(colab, data=request.data)
+        colab = Usuario.objects.get(id=pk)
+        serializer = UsuarioSerializer(colab, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
 
     def delete(self, request, pk=''):
-        colab = Colaborador.objects.get(id=pk)
+        colab = Usuario.objects.get(id=pk)
         colab.delete()
         return Response('Colaborador Apagado')
 

@@ -5,6 +5,7 @@ class TurmaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Turma
         fields = [
+            'cod_turma',
             'nome',
             'periodo',
             'dataInicio',
@@ -16,15 +17,16 @@ class AlunoSerializer(serializers.ModelSerializer):
         fields = [
             'nome',
             'ra',
+            'cpf',
             'turma',
         ]
 
-class ColaboradorSerializer(serializers.ModelSerializer):
+class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Colaborador
+        model = Usuario
         fields = [
             'nome',
-            'nif',
+            'identificador',
             'senha',
             'nivelAcesso',
         ]
@@ -58,7 +60,7 @@ class FiapSerializer(serializers.ModelSerializer):
             'turma',
             'dataInicio',
             'dataFinal',
-            'colaborador',
+            'usuario',
             'assinatura',
         ]
 
@@ -112,4 +114,43 @@ class ObservacaoSerializer(serializers.ModelSerializer):
             'observacao',
             'fiap',
             'data',
+        ]
+
+class EmpresaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Observacao
+        fields = [
+            'nome',
+        ]
+
+class ImportanciaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Observacao
+        fields = [
+            'nivel',
+        ]
+
+class SatisfacaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Observacao
+        fields = [
+            'nivel',
+        ]
+
+class PerguntaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Observacao
+        fields = [
+            'descricao',
+        ]
+
+class FormularioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Observacao
+        fields = [
+            'aluno',
+            'pergunta',
+            'importancia',
+            'satisfacao',
+            'feedback',
         ]

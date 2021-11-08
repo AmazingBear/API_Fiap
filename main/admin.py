@@ -2,19 +2,19 @@ from django.contrib import admin
 from .models import *
 
 class detAluno(admin.ModelAdmin):
-    list_display = ('id','nome','ra')
+    list_display = ('id','nome','ra','cpf', 'turma')
     list_display_links = ('id',)
     search_fields = ('nome',)
     list_per_page = 10
 
 class detColaborador(admin.ModelAdmin):
-    list_display = ('id','nome','nif','senha','nivelAcesso')
+    list_display = ('id','nome','identificador','senha','nivelAcesso')
     list_display_links = ('id',)
     search_fields = ('nome',)
     list_per_page = 10
 
 class detTurma(admin.ModelAdmin):
-    list_display = ('id','nome','periodo')
+    list_display = ('id','nome','periodo', 'dataInicio')
     list_display_links = ('id',)
     search_fields = ('nome',)
     list_per_page = 10
@@ -32,7 +32,7 @@ class detAssinatura(admin.ModelAdmin):
     list_per_page = 10
 
 class detFiap(admin.ModelAdmin):
-    list_display = ('id','progresso','aluno','turma','dataInicio','dataFinal','colaborador','assinatura')
+    list_display = ('id','progresso','aluno','turma','dataInicio','dataFinal','usuario','assinatura')
     list_display_links = ('id',)
     search_fields = ('aluno',)
     list_per_page = 10
@@ -68,9 +68,37 @@ class detObservacao(admin.ModelAdmin):
     list_per_page = 10
 
 
+
+
+class detEmpresa(admin.ModelAdmin):
+    list_display = ('id','nome')
+    list_display_links = ('id',)
+    list_per_page = 10
+
+class detImportancia(admin.ModelAdmin):
+    list_display = ('id','nivel')
+    list_display_links = ('id',)
+    list_per_page = 10
+
+class detSatisfacao(admin.ModelAdmin):
+    list_display = ('id','nivel')
+    list_display_links = ('id',)
+    list_per_page = 10
+
+class detPergunta(admin.ModelAdmin):
+    list_display = ('id','descricao')
+    list_display_links = ('id',)
+    list_per_page = 10
+
+class detFormulario(admin.ModelAdmin):
+    list_display = ('id','aluno','pergunta','importancia','satisfacao','feedback')
+    list_display_links = ('id',)
+    list_per_page = 10
+
+
 admin.site.register(Turma, detTurma)
 admin.site.register(Aluno,detAluno)
-admin.site.register(Colaborador,detColaborador)
+admin.site.register(Usuario,detColaborador)
 admin.site.register(Materia,detMateria)
 admin.site.register(Assinatura,detAssinatura)
 admin.site.register(Fiap,detFiap)
@@ -79,3 +107,10 @@ admin.site.register(Aproveitamento,detAproveitamento)
 admin.site.register(Aprendizagem,detAprendizagem)
 admin.site.register(Ocorrencia,detOcorrencia)
 admin.site.register(Observacao,detObservacao)
+
+admin.site.register(Empresa,detEmpresa)
+admin.site.register(Importancia,detImportancia)
+admin.site.register(Satisfacao,detSatisfacao)
+admin.site.register(Pergunta,detPergunta)
+admin.site.register(Formulario,detFormulario)
+

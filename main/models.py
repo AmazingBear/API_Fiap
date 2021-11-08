@@ -1,9 +1,11 @@
 import django
 from django.db import models
 import datetime
+import pandas as pd
 
 
 class Turma(models.Model):
+    cod_turma = models.CharField(max_length=50)
     nome = models.CharField(max_length=50)
     periodo = models.CharField(max_length=15, default='1',
                     choices=(('1','Manhã'),
@@ -17,26 +19,28 @@ class Turma(models.Model):
 class Aluno(models.Model):
     nome = models.CharField(max_length=50)
     ra = models.CharField(max_length=8)
+    cpf = models.CharField(max_length=15, default='')
     turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
 
-class Colaborador(models.Model):
+class Usuario(models.Model):
     nome = models.CharField(max_length=50)
-    nif = models.CharField(max_length=11)
+    identificador = models.CharField(max_length=30)
     senha = models.CharField(max_length=50)
     nivelAcesso = models.CharField(max_length=15, default='1',
-                    choices=(('1','Professor'),
-                             ('2','Analista'),
-                             ('3','Coordenador')))
+                    choices=(('1','Aluno'),
+                             ('2','Professor'),
+                             ('3','Analista'),
+                             ('4','Coordenador')))
 
     def __str__(self):
         return self.nome
 
 class Materia(models.Model):
     nome = models.CharField(max_length=50)
-    professor = models.ForeignKey(Colaborador, on_delete=models.CASCADE)
+    professor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -62,7 +66,7 @@ class Fiap(models.Model):
     turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
     dataInicio = models.DateTimeField(default=datetime.datetime.now())
     dataFinal = models.DateTimeField(null=True, default=datetime.datetime.now())
-    colaborador = models.ForeignKey(Colaborador, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
     assinatura = models.ForeignKey(Assinatura,on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
@@ -114,3 +118,65 @@ class Observacao(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class Empresa(models.Model):
+    nome = models.CharField(max_length=50)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class Importancia(models.Model):
+    nivel = models.CharField(max_length=10)
+
+    def __str__(self):
+        return str(self.id)
+
+class Satisfacao(models.Model):
+    nivel = models.CharField(max_length=10)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class Pergunta(models.Model):
+    descricao = models.CharField(max_length=100)
+
+    def __str__(self):
+        return str(self.id)
+
+class Formulario(models.Model):
+    aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
+    pergunta = models.ForeignKey(Pergunta, on_delete=models.CASCADE)
+    importancia = models.ForeignKey(Importancia, on_delete=models.CASCADE)
+    satisfacao = models.ForeignKey(Satisfacao, on_delete=models.CASCADE)
+    feedback = models.CharField(max_length=200)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class uploadCsv(models.Model):
+    File = models.FileField(null=True, upload_to='imports/%y/%m/%d/')
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        print(self.File.path)
+        self.importAlunos()
+
+    def importAlunos(self):
+        # f = open(self.File.path, "r")
+        # print(f.read())
+
+        data = pd.read_excel(self.File.path)
+
+        for row in range(data.shape[0]):
+            aluno = Aluno()
+            aluno.nome = data.iat[row, 0]
+            aluno.ra = data.iat[row, 1]
+            aluno.turma = Turma.objects.get(nome=data.iat[row, 2])
+            aluno.save()
+
+    def __str__(self):
+        return str(self.File)
