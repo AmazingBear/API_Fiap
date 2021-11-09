@@ -67,9 +67,6 @@ class detObservacao(admin.ModelAdmin):
     search_fields = ('fiap',)
     list_per_page = 10
 
-
-
-
 class detEmpresa(admin.ModelAdmin):
     list_display = ('id','nome')
     list_display_links = ('id',)
@@ -113,4 +110,6 @@ admin.site.register(Importancia,detImportancia)
 admin.site.register(Satisfacao,detSatisfacao)
 admin.site.register(Pergunta,detPergunta)
 admin.site.register(Formulario,detFormulario)
+admin.site.register(uploadCsv)
+
 

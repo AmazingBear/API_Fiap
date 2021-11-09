@@ -5,7 +5,7 @@ import pandas as pd
 
 
 class Turma(models.Model):
-    cod_turma = models.CharField(max_length=50)
+    cod_turma = models.CharField(max_length=50, default='')
     nome = models.CharField(max_length=50)
     periodo = models.CharField(max_length=15, default='1',
                     choices=(('1','Manhã'),
@@ -175,7 +175,8 @@ class uploadCsv(models.Model):
             aluno = Aluno()
             aluno.nome = data.iat[row, 0]
             aluno.ra = data.iat[row, 1]
-            aluno.turma = Turma.objects.get(nome=data.iat[row, 2])
+            aluno.cpf = data.iat[row, 2]
+            aluno.turma = Turma.objects.get(cod_turma=data.iat[row, 3])
             aluno.save()
 
     def __str__(self):
