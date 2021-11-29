@@ -26,13 +26,13 @@ class detMateria(admin.ModelAdmin):
     list_per_page = 10
 
 class detAssinatura(admin.ModelAdmin):
-    list_display = ('id','docente','coordenador','social','aluno','responsavel')
+    list_display = ('id','docente','coordenador','social','aluno','responsavel', 'fiap')
     list_display_links = ('id',)
     search_fields = ('nome',)
     list_per_page = 10
 
 class detFiap(admin.ModelAdmin):
-    list_display = ('id','progresso','aluno','turma','dataInicio','dataFinal','usuario','assinatura')
+    list_display = ('id','progresso','aluno','turma','dataInicio','dataFinal','usuario')
     list_display_links = ('id',)
     search_fields = ('aluno',)
     list_per_page = 10

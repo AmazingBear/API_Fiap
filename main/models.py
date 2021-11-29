@@ -14,7 +14,7 @@ class Turma(models.Model):
     dataInicio = models.DateTimeField(default=datetime.datetime.now())
 
     def __str__(self):
-        return self.nome
+        return self.cod_turma
 
 class Aluno(models.Model):
     nome = models.CharField(max_length=50)
@@ -46,16 +46,6 @@ class Materia(models.Model):
     def __str__(self):
         return self.nome
 
-class Assinatura(models.Model):
-    docente = models.ImageField(null=True, upload_to='docente/%y/%m/%d/')
-    coordenador = models.ImageField(null=True, upload_to='coordenador/%y/%m/%d/')
-    social = models.ImageField(null=True, upload_to='social/%y/%m/%d/')
-    aluno = models.ImageField(null=True, upload_to='aluno/%y/%m/%d/')
-    responsavel = models.ImageField(null=True, upload_to='responsavel/%y/%m/%d/')
-
-    def __str__(self):
-        return str(self.id)
-
 class Fiap(models.Model):
     progresso = models.CharField(max_length=20, default='1',
                     choices=(('1','Iniciada'),
@@ -67,10 +57,22 @@ class Fiap(models.Model):
     dataInicio = models.DateTimeField(default=datetime.datetime.now())
     dataFinal = models.DateTimeField(null=True, default=datetime.datetime.now())
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
-    assinatura = models.ForeignKey(Assinatura,on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return str(self.id)
+
+
+class Assinatura(models.Model):
+    docente = models.TextField()
+    coordenador = models.TextField()
+    social = models.TextField()
+    aluno = models.TextField()
+    responsavel = models.TextField()
+    fiap = models.ForeignKey(Fiap, blank=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id)
+
 
 class Frequencia(models.Model):
     aulasprevistas = models.IntegerField()

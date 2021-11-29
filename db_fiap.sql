@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Nov-2021 às 13:28
+-- Tempo de geração: 29-Nov-2021 às 13:24
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.12
 
@@ -90,70 +90,70 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (26, 'Can change aluno', 7, 'change_aluno'),
 (27, 'Can delete aluno', 7, 'delete_aluno'),
 (28, 'Can view aluno', 7, 'view_aluno'),
-(29, 'Can add assinatura', 8, 'add_assinatura'),
-(30, 'Can change assinatura', 8, 'change_assinatura'),
-(31, 'Can delete assinatura', 8, 'delete_assinatura'),
-(32, 'Can view assinatura', 8, 'view_assinatura'),
+(29, 'Can add empresa', 8, 'add_empresa'),
+(30, 'Can change empresa', 8, 'change_empresa'),
+(31, 'Can delete empresa', 8, 'delete_empresa'),
+(32, 'Can view empresa', 8, 'view_empresa'),
 (33, 'Can add fiap', 9, 'add_fiap'),
 (34, 'Can change fiap', 9, 'change_fiap'),
 (35, 'Can delete fiap', 9, 'delete_fiap'),
 (36, 'Can view fiap', 9, 'view_fiap'),
-(37, 'Can add turma', 10, 'add_turma'),
-(38, 'Can change turma', 10, 'change_turma'),
-(39, 'Can delete turma', 10, 'delete_turma'),
-(40, 'Can view turma', 10, 'view_turma'),
-(41, 'Can add ocorrencia', 11, 'add_ocorrencia'),
-(42, 'Can change ocorrencia', 11, 'change_ocorrencia'),
-(43, 'Can delete ocorrencia', 11, 'delete_ocorrencia'),
-(44, 'Can view ocorrencia', 11, 'view_ocorrencia'),
-(45, 'Can add observacao', 12, 'add_observacao'),
-(46, 'Can change observacao', 12, 'change_observacao'),
-(47, 'Can delete observacao', 12, 'delete_observacao'),
-(48, 'Can view observacao', 12, 'view_observacao'),
-(49, 'Can add materia', 13, 'add_materia'),
-(50, 'Can change materia', 13, 'change_materia'),
-(51, 'Can delete materia', 13, 'delete_materia'),
-(52, 'Can view materia', 13, 'view_materia'),
-(53, 'Can add frequencia', 14, 'add_frequencia'),
-(54, 'Can change frequencia', 14, 'change_frequencia'),
-(55, 'Can delete frequencia', 14, 'delete_frequencia'),
-(56, 'Can view frequencia', 14, 'view_frequencia'),
-(57, 'Can add aproveitamento', 15, 'add_aproveitamento'),
-(58, 'Can change aproveitamento', 15, 'change_aproveitamento'),
-(59, 'Can delete aproveitamento', 15, 'delete_aproveitamento'),
-(60, 'Can view aproveitamento', 15, 'view_aproveitamento'),
-(61, 'Can add aprendizagem', 16, 'add_aprendizagem'),
-(62, 'Can change aprendizagem', 16, 'change_aprendizagem'),
-(63, 'Can delete aprendizagem', 16, 'delete_aprendizagem'),
-(64, 'Can view aprendizagem', 16, 'view_aprendizagem'),
-(65, 'Can add empresa', 17, 'add_empresa'),
-(66, 'Can change empresa', 17, 'change_empresa'),
-(67, 'Can delete empresa', 17, 'delete_empresa'),
-(68, 'Can view empresa', 17, 'view_empresa'),
-(69, 'Can add importancia', 18, 'add_importancia'),
-(70, 'Can change importancia', 18, 'change_importancia'),
-(71, 'Can delete importancia', 18, 'delete_importancia'),
-(72, 'Can view importancia', 18, 'view_importancia'),
-(73, 'Can add pergunta', 19, 'add_pergunta'),
-(74, 'Can change pergunta', 19, 'change_pergunta'),
-(75, 'Can delete pergunta', 19, 'delete_pergunta'),
-(76, 'Can view pergunta', 19, 'view_pergunta'),
-(77, 'Can add satisfacao', 20, 'add_satisfacao'),
-(78, 'Can change satisfacao', 20, 'change_satisfacao'),
-(79, 'Can delete satisfacao', 20, 'delete_satisfacao'),
-(80, 'Can view satisfacao', 20, 'view_satisfacao'),
-(81, 'Can add upload csv', 21, 'add_uploadcsv'),
-(82, 'Can change upload csv', 21, 'change_uploadcsv'),
-(83, 'Can delete upload csv', 21, 'delete_uploadcsv'),
-(84, 'Can view upload csv', 21, 'view_uploadcsv'),
-(85, 'Can add usuario', 22, 'add_usuario'),
-(86, 'Can change usuario', 22, 'change_usuario'),
-(87, 'Can delete usuario', 22, 'delete_usuario'),
-(88, 'Can view usuario', 22, 'view_usuario'),
-(89, 'Can add formulario', 23, 'add_formulario'),
-(90, 'Can change formulario', 23, 'change_formulario'),
-(91, 'Can delete formulario', 23, 'delete_formulario'),
-(92, 'Can view formulario', 23, 'view_formulario');
+(37, 'Can add importancia', 10, 'add_importancia'),
+(38, 'Can change importancia', 10, 'change_importancia'),
+(39, 'Can delete importancia', 10, 'delete_importancia'),
+(40, 'Can view importancia', 10, 'view_importancia'),
+(41, 'Can add pergunta', 11, 'add_pergunta'),
+(42, 'Can change pergunta', 11, 'change_pergunta'),
+(43, 'Can delete pergunta', 11, 'delete_pergunta'),
+(44, 'Can view pergunta', 11, 'view_pergunta'),
+(45, 'Can add satisfacao', 12, 'add_satisfacao'),
+(46, 'Can change satisfacao', 12, 'change_satisfacao'),
+(47, 'Can delete satisfacao', 12, 'delete_satisfacao'),
+(48, 'Can view satisfacao', 12, 'view_satisfacao'),
+(49, 'Can add turma', 13, 'add_turma'),
+(50, 'Can change turma', 13, 'change_turma'),
+(51, 'Can delete turma', 13, 'delete_turma'),
+(52, 'Can view turma', 13, 'view_turma'),
+(53, 'Can add upload csv', 14, 'add_uploadcsv'),
+(54, 'Can change upload csv', 14, 'change_uploadcsv'),
+(55, 'Can delete upload csv', 14, 'delete_uploadcsv'),
+(56, 'Can view upload csv', 14, 'view_uploadcsv'),
+(57, 'Can add usuario', 15, 'add_usuario'),
+(58, 'Can change usuario', 15, 'change_usuario'),
+(59, 'Can delete usuario', 15, 'delete_usuario'),
+(60, 'Can view usuario', 15, 'view_usuario'),
+(61, 'Can add ocorrencia', 16, 'add_ocorrencia'),
+(62, 'Can change ocorrencia', 16, 'change_ocorrencia'),
+(63, 'Can delete ocorrencia', 16, 'delete_ocorrencia'),
+(64, 'Can view ocorrencia', 16, 'view_ocorrencia'),
+(65, 'Can add observacao', 17, 'add_observacao'),
+(66, 'Can change observacao', 17, 'change_observacao'),
+(67, 'Can delete observacao', 17, 'delete_observacao'),
+(68, 'Can view observacao', 17, 'view_observacao'),
+(69, 'Can add materia', 18, 'add_materia'),
+(70, 'Can change materia', 18, 'change_materia'),
+(71, 'Can delete materia', 18, 'delete_materia'),
+(72, 'Can view materia', 18, 'view_materia'),
+(73, 'Can add frequencia', 19, 'add_frequencia'),
+(74, 'Can change frequencia', 19, 'change_frequencia'),
+(75, 'Can delete frequencia', 19, 'delete_frequencia'),
+(76, 'Can view frequencia', 19, 'view_frequencia'),
+(77, 'Can add formulario', 20, 'add_formulario'),
+(78, 'Can change formulario', 20, 'change_formulario'),
+(79, 'Can delete formulario', 20, 'delete_formulario'),
+(80, 'Can view formulario', 20, 'view_formulario'),
+(81, 'Can add assinatura', 21, 'add_assinatura'),
+(82, 'Can change assinatura', 21, 'change_assinatura'),
+(83, 'Can delete assinatura', 21, 'delete_assinatura'),
+(84, 'Can view assinatura', 21, 'view_assinatura'),
+(85, 'Can add aproveitamento', 22, 'add_aproveitamento'),
+(86, 'Can change aproveitamento', 22, 'change_aproveitamento'),
+(87, 'Can delete aproveitamento', 22, 'delete_aproveitamento'),
+(88, 'Can view aproveitamento', 22, 'view_aproveitamento'),
+(89, 'Can add aprendizagem', 23, 'add_aprendizagem'),
+(90, 'Can change aprendizagem', 23, 'change_aprendizagem'),
+(91, 'Can delete aprendizagem', 23, 'delete_aprendizagem'),
+(92, 'Can view aprendizagem', 23, 'view_aprendizagem');
 
 -- --------------------------------------------------------
 
@@ -174,6 +174,13 @@ CREATE TABLE `auth_user` (
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `auth_user`
+--
+
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$260000$qlyn9HhIDPtEhMS6Z3ZJLm$MVnuE6I8nuMbFxwxGrMpn5Z2joYbfET7QhLz+Pc1y7Q=', '2021-11-29 11:30:28.753542', 1, 'master', '', '', 'master@master.com', 1, 1, '2021-11-29 11:30:06.162098');
 
 -- --------------------------------------------------------
 
@@ -216,6 +223,51 @@ CREATE TABLE `django_admin_log` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `django_admin_log`
+--
+
+INSERT INTO `django_admin_log` (`id`, `action_time`, `object_id`, `object_repr`, `action_flag`, `change_message`, `content_type_id`, `user_id`) VALUES
+(1, '2021-11-29 11:34:22.341315', '1', 'Desenvolvimento de Sistemas', 1, '[{\"added\": {}}]', 13, 1),
+(2, '2021-11-29 11:34:26.081391', '1', 'Testando da Silva Nobrega', 1, '[{\"added\": {}}]', 7, 1),
+(3, '2021-11-29 11:35:01.547670', '2', 'Carlos de Pras', 1, '[{\"added\": {}}]', 7, 1),
+(4, '2021-11-29 11:35:23.819560', '3', 'Doze alberto silva', 1, '[{\"added\": {}}]', 7, 1),
+(5, '2021-11-29 11:35:55.778477', '4', 'Alberto Arthur Junior', 1, '[{\"added\": {}}]', 7, 1),
+(6, '2021-11-29 11:37:16.401097', '1', 'André Francisco Batista', 1, '[{\"added\": {}}]', 15, 1),
+(7, '2021-11-29 11:37:18.992245', '1', '1', 1, '[{\"added\": {}}]', 9, 1),
+(8, '2021-11-29 11:39:28.732519', '1', '1', 1, '[{\"added\": {}}]', 19, 1),
+(9, '2021-11-29 11:40:14.594332', '1', '1', 1, '[{\"added\": {}}]', 17, 1),
+(10, '2021-11-29 11:40:38.890689', '1', '1', 1, '[{\"added\": {}}]', 16, 1),
+(11, '2021-11-29 11:41:21.016561', '1', 'Front-End', 1, '[{\"added\": {}}]', 18, 1),
+(12, '2021-11-29 11:41:41.981691', '1', '1', 1, '[{\"added\": {}}]', 22, 1),
+(13, '2021-11-29 11:42:18.396823', '1', '1', 1, '[{\"added\": {}}]', 23, 1),
+(14, '2021-11-29 12:06:25.244992', '2', '2', 3, '', 19, 1),
+(15, '2021-11-29 12:07:12.726175', '2', 'Desenvolvimento de Sistemas', 1, '[{\"added\": {}}]', 13, 1),
+(16, '2021-11-29 12:07:51.544071', '2', 'Francisco Savedra Lima', 1, '[{\"added\": {}}]', 15, 1),
+(17, '2021-11-29 12:07:54.041819', '3', '3', 1, '[{\"added\": {}}]', 9, 1),
+(18, '2021-11-29 12:10:11.670731', '3', 'Lindomar Bastistao', 1, '[{\"added\": {}}]', 15, 1),
+(19, '2021-11-29 12:10:22.334067', '4', '4', 1, '[{\"added\": {}}]', 9, 1),
+(20, '2021-11-29 12:11:00.279974', '4', '4', 1, '[{\"added\": {}}]', 19, 1),
+(21, '2021-11-29 12:11:08.834849', '5', '5', 1, '[{\"added\": {}}]', 19, 1),
+(22, '2021-11-29 12:11:20.587983', '6', '6', 1, '[{\"added\": {}}]', 19, 1),
+(23, '2021-11-29 12:12:04.877558', '3', '3', 3, '', 19, 1),
+(24, '2021-11-29 12:13:15.075508', '2', 'Data-Analytics', 1, '[{\"added\": {}}]', 18, 1),
+(25, '2021-11-29 12:13:28.902222', '3', 'Back-End', 1, '[{\"added\": {}}]', 18, 1),
+(26, '2021-11-29 12:13:47.837734', '4', 'Linguagem de marcação', 1, '[{\"added\": {}}]', 18, 1),
+(27, '2021-11-29 12:14:01.629469', '5', 'Desenvolvimento Mibile', 1, '[{\"added\": {}}]', 18, 1),
+(28, '2021-11-29 12:14:14.820183', '6', 'Hardware', 1, '[{\"added\": {}}]', 18, 1),
+(29, '2021-11-29 12:14:29.357390', '7', 'Programação OO', 1, '[{\"added\": {}}]', 18, 1),
+(30, '2021-11-29 12:14:39.490819', '8', 'Back-End', 1, '[{\"added\": {}}]', 18, 1),
+(31, '2021-11-29 12:17:35.391881', '2', '2', 1, '[{\"added\": {}}]', 17, 1),
+(32, '2021-11-29 12:17:50.829478', '3', '3', 1, '[{\"added\": {}}]', 17, 1),
+(33, '2021-11-29 12:18:35.653861', '4', '4', 1, '[{\"added\": {}}]', 17, 1),
+(34, '2021-11-29 12:19:54.687822', '2', '2', 1, '[{\"added\": {}}]', 16, 1),
+(35, '2021-11-29 12:20:04.109680', '3', '3', 1, '[{\"added\": {}}]', 16, 1),
+(36, '2021-11-29 12:20:08.763359', '4', '4', 1, '[{\"added\": {}}]', 16, 1),
+(37, '2021-11-29 12:21:21.790908', '4', 'Gabriel Ferreira', 1, '[{\"added\": {}}]', 15, 1),
+(38, '2021-11-29 12:21:59.060759', '5', 'Dominique', 1, '[{\"added\": {}}]', 15, 1),
+(39, '2021-11-29 12:22:56.594483', '6', 'Alex', 1, '[{\"added\": {}}]', 15, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -239,22 +291,22 @@ INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
 (4, 'auth', 'user'),
 (5, 'contenttypes', 'contenttype'),
 (7, 'main', 'aluno'),
-(16, 'main', 'aprendizagem'),
-(15, 'main', 'aproveitamento'),
-(8, 'main', 'assinatura'),
-(17, 'main', 'empresa'),
+(23, 'main', 'aprendizagem'),
+(22, 'main', 'aproveitamento'),
+(21, 'main', 'assinatura'),
+(8, 'main', 'empresa'),
 (9, 'main', 'fiap'),
-(23, 'main', 'formulario'),
-(14, 'main', 'frequencia'),
-(18, 'main', 'importancia'),
-(13, 'main', 'materia'),
-(12, 'main', 'observacao'),
-(11, 'main', 'ocorrencia'),
-(19, 'main', 'pergunta'),
-(20, 'main', 'satisfacao'),
-(10, 'main', 'turma'),
-(21, 'main', 'uploadcsv'),
-(22, 'main', 'usuario'),
+(20, 'main', 'formulario'),
+(19, 'main', 'frequencia'),
+(10, 'main', 'importancia'),
+(18, 'main', 'materia'),
+(17, 'main', 'observacao'),
+(16, 'main', 'ocorrencia'),
+(11, 'main', 'pergunta'),
+(12, 'main', 'satisfacao'),
+(13, 'main', 'turma'),
+(14, 'main', 'uploadcsv'),
+(15, 'main', 'usuario'),
 (6, 'sessions', 'session');
 
 -- --------------------------------------------------------
@@ -275,28 +327,28 @@ CREATE TABLE `django_migrations` (
 --
 
 INSERT INTO `django_migrations` (`id`, `app`, `name`, `applied`) VALUES
-(1, 'contenttypes', '0001_initial', '2021-11-22 12:26:01.359122'),
-(2, 'auth', '0001_initial', '2021-11-22 12:26:15.812040'),
-(3, 'admin', '0001_initial', '2021-11-22 12:26:19.525677'),
-(4, 'admin', '0002_logentry_remove_auto_add', '2021-11-22 12:26:19.607676'),
-(5, 'admin', '0003_logentry_add_action_flag_choices', '2021-11-22 12:26:19.657248'),
-(6, 'contenttypes', '0002_remove_content_type_name', '2021-11-22 12:26:20.669941'),
-(7, 'auth', '0002_alter_permission_name_max_length', '2021-11-22 12:26:21.949310'),
-(8, 'auth', '0003_alter_user_email_max_length', '2021-11-22 12:26:22.069966'),
-(9, 'auth', '0004_alter_user_username_opts', '2021-11-22 12:26:22.140580'),
-(10, 'auth', '0005_alter_user_last_login_null', '2021-11-22 12:26:22.811600'),
-(11, 'auth', '0006_require_contenttypes_0002', '2021-11-22 12:26:22.856885'),
-(12, 'auth', '0007_alter_validators_add_error_messages', '2021-11-22 12:26:22.906855'),
-(13, 'auth', '0008_alter_user_username_max_length', '2021-11-22 12:26:23.186525'),
-(14, 'auth', '0009_alter_user_last_name_max_length', '2021-11-22 12:26:23.387635'),
-(15, 'auth', '0010_alter_group_name_max_length', '2021-11-22 12:26:23.628134'),
-(16, 'auth', '0011_update_proxy_permissions', '2021-11-22 12:26:23.682214'),
-(17, 'auth', '0012_alter_user_first_name_max_length', '2021-11-22 12:26:23.877050'),
-(18, 'main', '0001_initial', '2021-11-22 12:26:48.093291'),
-(19, 'main', '0002_auto_20211108_0839', '2021-11-22 12:26:50.182974'),
-(20, 'main', '0003_auto_20211109_0808', '2021-11-22 12:27:07.077100'),
-(21, 'main', '0004_auto_20211122_0925', '2021-11-22 12:27:07.187273'),
-(22, 'sessions', '0001_initial', '2021-11-22 12:27:08.187470');
+(1, 'contenttypes', '0001_initial', '2021-11-29 11:27:38.444977'),
+(2, 'auth', '0001_initial', '2021-11-29 11:27:49.153493'),
+(3, 'admin', '0001_initial', '2021-11-29 11:27:51.451529'),
+(4, 'admin', '0002_logentry_remove_auto_add', '2021-11-29 11:27:51.506256'),
+(5, 'admin', '0003_logentry_add_action_flag_choices', '2021-11-29 11:27:51.556437'),
+(6, 'contenttypes', '0002_remove_content_type_name', '2021-11-29 11:27:52.472553'),
+(7, 'auth', '0002_alter_permission_name_max_length', '2021-11-29 11:27:54.027617'),
+(8, 'auth', '0003_alter_user_email_max_length', '2021-11-29 11:27:54.163593'),
+(9, 'auth', '0004_alter_user_username_opts', '2021-11-29 11:27:54.214386'),
+(10, 'auth', '0005_alter_user_last_login_null', '2021-11-29 11:27:55.213121'),
+(11, 'auth', '0006_require_contenttypes_0002', '2021-11-29 11:27:55.351325'),
+(12, 'auth', '0007_alter_validators_add_error_messages', '2021-11-29 11:27:55.407618'),
+(13, 'auth', '0008_alter_user_username_max_length', '2021-11-29 11:27:55.547177'),
+(14, 'auth', '0009_alter_user_last_name_max_length', '2021-11-29 11:27:55.672413'),
+(15, 'auth', '0010_alter_group_name_max_length', '2021-11-29 11:27:55.835969'),
+(16, 'auth', '0011_update_proxy_permissions', '2021-11-29 11:27:55.890823'),
+(17, 'auth', '0012_alter_user_first_name_max_length', '2021-11-29 11:27:56.062801'),
+(18, 'main', '0001_initial', '2021-11-29 11:28:22.064252'),
+(19, 'sessions', '0001_initial', '2021-11-29 11:28:23.023830'),
+(20, 'main', '0002_auto_20211129_0830', '2021-11-29 11:30:25.563688'),
+(21, 'main', '0003_auto_20211129_0832', '2021-11-29 11:32:38.402877'),
+(22, 'main', '0004_auto_20211129_0908', '2021-11-29 12:08:49.511152');
 
 -- --------------------------------------------------------
 
@@ -310,6 +362,13 @@ CREATE TABLE `django_session` (
   `expire_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `django_session`
+--
+
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('fr1f1bxkghwrdqjfh6tl7u9biplrp1b2', '.eJxVjDkOwjAUBe_iGlm2HC9Q0nMG62_GAeRIcVJF3B0ipYD2zczbVIZ1qXntMueR1UVZdfrdEOgpbQf8gHafNE1tmUfUu6IP2vVtYnldD_fvoEKv37owOrIJnHeMxrNwAA8uRCqlmOHsAtqBhFMw6KxEGyNZCamwQRNB1PsDCA44tg:1mrerc:ZU5cnhin4A5kexnO18TjoK56zcHxi4KIUSocxw9Zc2g', '2021-12-13 11:30:28.812357');
+
 -- --------------------------------------------------------
 
 --
@@ -320,9 +379,19 @@ CREATE TABLE `main_aluno` (
   `id` bigint(20) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `ra` varchar(8) NOT NULL,
-  `turma_id` bigint(20) NOT NULL,
-  `cpf` varchar(15) NOT NULL
+  `cpf` varchar(15) NOT NULL,
+  `turma_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `main_aluno`
+--
+
+INSERT INTO `main_aluno` (`id`, `nome`, `ra`, `cpf`, `turma_id`) VALUES
+(1, 'Testando da Silva Nobrega', '92896438', '77788858745', 1),
+(2, 'Carlos de Pras', '92896412', '6875568422', 1),
+(3, 'Doze alberto silva', '92896413', '67559475487', 1),
+(4, 'Alberto Arthur Junior', '92896478', '56844796833', 1);
 
 -- --------------------------------------------------------
 
@@ -340,6 +409,13 @@ CREATE TABLE `main_aprendizagem` (
   `fiap_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `main_aprendizagem`
+--
+
+INSERT INTO `main_aprendizagem` (`id`, `atencao`, `compreensao`, `comprometimento`, `relacionamento`, `Outros`, `fiap_id`) VALUES
+(1, 1, 1, 1, 1, NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -355,6 +431,13 @@ CREATE TABLE `main_aproveitamento` (
   `materia_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `main_aproveitamento`
+--
+
+INSERT INTO `main_aproveitamento` (`id`, `notamedia`, `notaaluno`, `notarec`, `fiap_id`, `materia_id`) VALUES
+(1, 7, 5, 1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -363,11 +446,12 @@ CREATE TABLE `main_aproveitamento` (
 
 CREATE TABLE `main_assinatura` (
   `id` bigint(20) NOT NULL,
-  `docente` varchar(100) DEFAULT NULL,
-  `coordenador` varchar(100) DEFAULT NULL,
-  `social` varchar(100) DEFAULT NULL,
-  `aluno` varchar(100) DEFAULT NULL,
-  `responsavel` varchar(100) DEFAULT NULL
+  `docente` longtext NOT NULL,
+  `coordenador` longtext NOT NULL,
+  `social` longtext NOT NULL,
+  `aluno` longtext NOT NULL,
+  `responsavel` longtext NOT NULL,
+  `fiap_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -393,10 +477,19 @@ CREATE TABLE `main_fiap` (
   `dataInicio` datetime(6) NOT NULL,
   `dataFinal` datetime(6) DEFAULT NULL,
   `aluno_id` bigint(20) NOT NULL,
-  `assinatura_id` bigint(20) DEFAULT NULL,
   `turma_id` bigint(20) NOT NULL,
   `usuario_id` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `main_fiap`
+--
+
+INSERT INTO `main_fiap` (`id`, `progresso`, `dataInicio`, `dataFinal`, `aluno_id`, `turma_id`, `usuario_id`) VALUES
+(1, '1', '2021-11-29 11:32:16.000000', '2021-11-29 11:32:16.000000', 4, 1, 1),
+(2, '1', '2021-11-29 11:32:16.000000', '2021-11-29 11:32:16.000000', 3, 1, 1),
+(3, '1', '2021-11-29 11:57:02.000000', '2021-11-29 11:57:02.000000', 4, 2, 2),
+(4, '2', '2021-11-29 12:08:40.000000', '2021-11-29 12:08:40.000000', 2, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -426,6 +519,16 @@ CREATE TABLE `main_frequencia` (
   `fiap_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `main_frequencia`
+--
+
+INSERT INTO `main_frequencia` (`id`, `aulasprevistas`, `ausencias`, `fiap_id`) VALUES
+(1, 24, 12, 1),
+(4, 20, 5, 2),
+(5, 20, 2, 3),
+(6, 23, 4, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -450,6 +553,20 @@ CREATE TABLE `main_materia` (
   `turma_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `main_materia`
+--
+
+INSERT INTO `main_materia` (`id`, `nome`, `professor_id`, `turma_id`) VALUES
+(1, 'Front-End', 1, 1),
+(2, 'Data-Analytics', 2, 2),
+(3, 'Back-End', 2, 1),
+(4, 'Linguagem de marcação', 1, 1),
+(5, 'Desenvolvimento Mibile', 3, 1),
+(6, 'Hardware', 3, 1),
+(7, 'Programação OO', 3, 2),
+(8, 'Back-End', 3, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -462,6 +579,16 @@ CREATE TABLE `main_observacao` (
   `data` datetime(6) NOT NULL,
   `fiap_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `main_observacao`
+--
+
+INSERT INTO `main_observacao` (`id`, `observacao`, `data`, `fiap_id`) VALUES
+(1, 'O aluno não esta aparecendo nas aulas.', '2021-11-29 11:32:16.000000', 1),
+(2, 'O aluno não esta acompanhado as aulas.', '2021-11-29 12:08:40.000000', 2),
+(3, 'O aluno esta faltando muito.', '2021-11-29 12:08:40.000000', 3),
+(4, 'O aluno esta respondendo o professor.', '2021-11-29 12:08:40.000000', 4);
 
 -- --------------------------------------------------------
 
@@ -477,6 +604,16 @@ CREATE TABLE `main_ocorrencia` (
   `cancelmatricula` tinyint(1) DEFAULT NULL,
   `fiap_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `main_ocorrencia`
+--
+
+INSERT INTO `main_ocorrencia` (`id`, `advverbal`, `advescrita`, `afastamento`, `cancelmatricula`, `fiap_id`) VALUES
+(1, 1, 1, 1, 0, 1),
+(2, 1, 1, 0, 0, 2),
+(3, 1, 0, 1, 0, 3),
+(4, 1, 1, 0, 0, 4);
 
 -- --------------------------------------------------------
 
@@ -508,11 +645,19 @@ CREATE TABLE `main_satisfacao` (
 
 CREATE TABLE `main_turma` (
   `id` bigint(20) NOT NULL,
+  `cod_turma` varchar(50) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `periodo` varchar(15) NOT NULL,
-  `dataInicio` datetime(6) NOT NULL,
-  `cod_turma` varchar(50) NOT NULL
+  `dataInicio` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `main_turma`
+--
+
+INSERT INTO `main_turma` (`id`, `cod_turma`, `nome`, `periodo`, `dataInicio`) VALUES
+(1, '2DESM', 'Desenvolvimento de Sistemas', '1', '2021-11-29 11:32:16.000000'),
+(2, '1DEST', 'Desenvolvimento de Sistemas', '2', '2021-11-29 11:57:02.000000');
 
 -- --------------------------------------------------------
 
@@ -538,6 +683,18 @@ CREATE TABLE `main_usuario` (
   `senha` varchar(50) NOT NULL,
   `nivelAcesso` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `main_usuario`
+--
+
+INSERT INTO `main_usuario` (`id`, `nome`, `identificador`, `senha`, `nivelAcesso`) VALUES
+(1, 'André Francisco Batista', '92896500', 'admin123', '2'),
+(2, 'Francisco Savedra Lima', '92866573', 'master321', '2'),
+(3, 'Lindomar Bastistao', '92896521', 'master213', '2'),
+(4, 'Gabriel Ferreira', '92896430', 'ferreira123', '1'),
+(5, 'Dominique', '92896501', 'dominique123', '3'),
+(6, 'Alex', '92896599', 'alex123', '4');
 
 --
 -- Índices para tabelas despejadas
@@ -642,7 +799,8 @@ ALTER TABLE `main_aproveitamento`
 -- Índices para tabela `main_assinatura`
 --
 ALTER TABLE `main_assinatura`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `main_assinatura_fiap_id_5cfde562_fk_main_fiap_id` (`fiap_id`);
 
 --
 -- Índices para tabela `main_empresa`
@@ -656,9 +814,8 @@ ALTER TABLE `main_empresa`
 ALTER TABLE `main_fiap`
   ADD PRIMARY KEY (`id`),
   ADD KEY `main_fiap_turma_id_45cd4bf0_fk_main_turma_id` (`turma_id`),
-  ADD KEY `main_fiap_aluno_id_0814b74d_fk_main_aluno_id` (`aluno_id`),
-  ADD KEY `main_fiap_assinatura_id_ef4541bc_fk_main_assinatura_id` (`assinatura_id`),
-  ADD KEY `main_fiap_usuario_id_a864eca0_fk_main_usuario_id` (`usuario_id`);
+  ADD KEY `main_fiap_usuario_id_a864eca0_fk_main_usuario_id` (`usuario_id`),
+  ADD KEY `main_fiap_aluno_id_0814b74d_fk_main_aluno_id` (`aluno_id`);
 
 --
 -- Índices para tabela `main_formulario`
@@ -688,8 +845,8 @@ ALTER TABLE `main_importancia`
 --
 ALTER TABLE `main_materia`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `main_materia_turma_id_83301e68_fk_main_turma_id` (`turma_id`),
-  ADD KEY `main_materia_professor_id_ed847677_fk_main_usuario_id` (`professor_id`);
+  ADD KEY `main_materia_professor_id_ed847677_fk_main_usuario_id` (`professor_id`),
+  ADD KEY `main_materia_turma_id_83301e68_fk_main_turma_id` (`turma_id`);
 
 --
 -- Índices para tabela `main_observacao`
@@ -761,7 +918,7 @@ ALTER TABLE `auth_permission`
 -- AUTO_INCREMENT de tabela `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `auth_user_groups`
@@ -779,7 +936,7 @@ ALTER TABLE `auth_user_user_permissions`
 -- AUTO_INCREMENT de tabela `django_admin_log`
 --
 ALTER TABLE `django_admin_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `django_content_type`
@@ -797,19 +954,19 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT de tabela `main_aluno`
 --
 ALTER TABLE `main_aluno`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `main_aprendizagem`
 --
 ALTER TABLE `main_aprendizagem`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `main_aproveitamento`
 --
 ALTER TABLE `main_aproveitamento`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `main_assinatura`
@@ -827,7 +984,7 @@ ALTER TABLE `main_empresa`
 -- AUTO_INCREMENT de tabela `main_fiap`
 --
 ALTER TABLE `main_fiap`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `main_formulario`
@@ -839,7 +996,7 @@ ALTER TABLE `main_formulario`
 -- AUTO_INCREMENT de tabela `main_frequencia`
 --
 ALTER TABLE `main_frequencia`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `main_importancia`
@@ -851,19 +1008,19 @@ ALTER TABLE `main_importancia`
 -- AUTO_INCREMENT de tabela `main_materia`
 --
 ALTER TABLE `main_materia`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `main_observacao`
 --
 ALTER TABLE `main_observacao`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `main_ocorrencia`
 --
 ALTER TABLE `main_ocorrencia`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `main_pergunta`
@@ -881,7 +1038,7 @@ ALTER TABLE `main_satisfacao`
 -- AUTO_INCREMENT de tabela `main_turma`
 --
 ALTER TABLE `main_turma`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `main_uploadcsv`
@@ -893,7 +1050,7 @@ ALTER TABLE `main_uploadcsv`
 -- AUTO_INCREMENT de tabela `main_usuario`
 --
 ALTER TABLE `main_usuario`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para despejos de tabelas
@@ -953,11 +1110,16 @@ ALTER TABLE `main_aproveitamento`
   ADD CONSTRAINT `main_aproveitamento_materia_id_2e1497ca_fk_main_materia_id` FOREIGN KEY (`materia_id`) REFERENCES `main_materia` (`id`);
 
 --
+-- Limitadores para a tabela `main_assinatura`
+--
+ALTER TABLE `main_assinatura`
+  ADD CONSTRAINT `main_assinatura_fiap_id_5cfde562_fk_main_fiap_id` FOREIGN KEY (`fiap_id`) REFERENCES `main_fiap` (`id`);
+
+--
 -- Limitadores para a tabela `main_fiap`
 --
 ALTER TABLE `main_fiap`
   ADD CONSTRAINT `main_fiap_aluno_id_0814b74d_fk_main_aluno_id` FOREIGN KEY (`aluno_id`) REFERENCES `main_aluno` (`id`),
-  ADD CONSTRAINT `main_fiap_assinatura_id_ef4541bc_fk_main_assinatura_id` FOREIGN KEY (`assinatura_id`) REFERENCES `main_assinatura` (`id`),
   ADD CONSTRAINT `main_fiap_turma_id_45cd4bf0_fk_main_turma_id` FOREIGN KEY (`turma_id`) REFERENCES `main_turma` (`id`),
   ADD CONSTRAINT `main_fiap_usuario_id_a864eca0_fk_main_usuario_id` FOREIGN KEY (`usuario_id`) REFERENCES `main_usuario` (`id`);
 

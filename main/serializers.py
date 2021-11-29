@@ -49,6 +49,7 @@ class AssinaturaSerializer(serializers.ModelSerializer):
             'social',
             'aluno',
             'responsavel',
+            'fiap',
         ]
 
 class FiapSerializer(serializers.ModelSerializer):
@@ -61,7 +62,6 @@ class FiapSerializer(serializers.ModelSerializer):
             'dataInicio',
             'dataFinal',
             'usuario',
-            'assinatura',
         ]
 
 class FrequenciaSerializer(serializers.ModelSerializer):

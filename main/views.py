@@ -6,8 +6,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import *
 
-
-
 class TurmaAPIView(APIView):
     """
     API Turma
@@ -164,7 +162,7 @@ class AssinaturaAPIView(APIView):
             serializer = AssinaturaSerializer(assinatura, many=True)
             return Response(serializer.data)
         else:
-            assinatura = Assinatura.objects.get(id=pk)
+            assinatura = Assinatura.objects.get(fiap=pk)
             serializer = AssinaturaSerializer(assinatura)
             return Response(serializer.data)
 
@@ -236,12 +234,14 @@ class FrequenciaAPIView(APIView):
             serializer = FrequenciaSerializer(frequencia, many=True)
             return Response(serializer.data)
         else:
-            frequencia = Frequencia.objects.get(id=pk)
+            frequencia = Frequencia.objects.get(fiap=pk)
             serializer = FrequenciaSerializer(frequencia)
             return Response(serializer.data)
 
 
     def post(self, request):
+        fiap = Fiap.objects.latest('id')
+        request.data[0]['fiap'] = fiap.id
         serializer = FrequenciaSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -272,12 +272,14 @@ class AproveitamentoAPIView(APIView):
             serializer = AproveitamentoSerializer(aproveitamento, many=True)
             return Response(serializer.data)
         else:
-            aproveitamento = Aproveitamento.objects.get(id=pk)
+            aproveitamento = Aproveitamento.objects.get(fiap=pk)
             serializer = AproveitamentoSerializer(aproveitamento)
             return Response(serializer.data)
 
 
     def post(self, request):
+        fiap = Fiap.objects.latest('id')
+        request.data[0]['fiap'] = fiap.id
         serializer = AproveitamentoSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -308,12 +310,14 @@ class AprendizagemAPIView(APIView):
             serializer = AprendizagemSerializer(aprendi, many=True)
             return Response(serializer.data)
         else:
-            aprendi = Aprendizagem.objects.get(id=pk)
+            aprendi = Aprendizagem.objects.get(fiap=pk)
             serializer = AprendizagemSerializer(aprendi)
             return Response(serializer.data)
 
 
     def post(self, request):
+        fiap = Fiap.objects.latest('id')
+        request.data[0]['fiap'] = fiap.id
         serializer = AprendizagemSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -344,12 +348,14 @@ class OcorrenciaAPIView(APIView):
             serializer = OcorrenciaSerializer(ocorrencia, many=True)
             return Response(serializer.data)
         else:
-            ocorrencia = Ocorrencia.objects.get(id=pk)
+            ocorrencia = Ocorrencia.objects.get(fiap=pk)
             serializer = OcorrenciaSerializer(ocorrencia)
             return Response(serializer.data)
 
 
     def post(self, request):
+        fiap = Fiap.objects.latest('id')
+        request.data[0]['fiap'] = fiap.id
         serializer = OcorrenciaSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -380,12 +386,14 @@ class ObservacaoAPIView(APIView):
             serializer = ObservacaoSerializer(observa, many=True)
             return Response(serializer.data)
         else:
-            observa = Observacao.objects.get(id=pk)
+            observa = Observacao.objects.get(fiap=pk)
             serializer = ObservacaoSerializer(observa)
             return Response(serializer.data)
 
 
     def post(self, request):
+        fiap = Fiap.objects.latest('id')
+        request.data[0]['fiap'] = fiap.id
         serializer = ObservacaoSerializer(data=request.data, many=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
