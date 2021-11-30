@@ -40,8 +40,6 @@ class Usuario(models.Model):
 
 class Materia(models.Model):
     nome = models.CharField(max_length=50)
-    professor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
@@ -54,6 +52,7 @@ class Fiap(models.Model):
 
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
     turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
+    materia = models.ForeignKey(Materia, on_delete=models.CASCADE, null=True)
     dataInicio = models.DateTimeField(default=datetime.datetime.now())
     dataFinal = models.DateTimeField(null=True, default=datetime.datetime.now())
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)

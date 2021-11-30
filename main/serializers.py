@@ -36,8 +36,6 @@ class MateriaSerializer(serializers.ModelSerializer):
         model = Materia
         fields = [
             'nome',
-            'professor',
-            'turma',
         ]
 
 class AssinaturaSerializer(serializers.ModelSerializer):
@@ -59,6 +57,7 @@ class FiapSerializer(serializers.ModelSerializer):
             'progresso',
             'aluno',
             'turma',
+            'materia',
             'dataInicio',
             'dataFinal',
             'usuario',

@@ -149,7 +149,7 @@ class MateriaAPIView(APIView):
     def delete(self, request, pk=''):
         materia = Materia.objects.get(id=pk)
         materia.delete()
-        return Response('Colaborador Apagado')
+        return Response('Materia Apagada')
 
 class AssinaturaAPIView(APIView):
     """
