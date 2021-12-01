@@ -1,3 +1,5 @@
+import math
+
 from django.shortcuts import render, redirect
 from .models import Aluno, Usuario, Turma, Fiap, Materia, Frequencia, Assinatura, Observacao, Ocorrencia, \
     Aprendizagem, Aproveitamento
@@ -176,7 +178,7 @@ class AssinaturaAPIView(APIView):
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        assinatura = Assinatura.objects.get(id=pk)
+        assinatura = Assinatura.objects.get(fiap=pk)
         serializer = AssinaturaSerializer(assinatura, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -223,6 +225,38 @@ class FiapAPIView(APIView):
         fiap.delete()
         return Response('Fiap Apagada')
 
+class FiapBackendAPIView(APIView):
+
+    def get(self, request):
+        s = request.GET.get('s')
+        sort = request.GET.get('sort')
+        page = int(request.GET.get('page', 1))
+        per_page = 3
+        fiap = Fiap.objects.all()
+
+        if s:
+            fiap = fiap.filter(progresso__icontains=s)
+
+        if sort == 'asc':
+            fiap = fiap.order_by('dataInicio')
+        elif sort == 'desc':
+            fiap = fiap.order_by('-dataInicio')
+
+        total = fiap.count()
+        start = (page- 1) * per_page
+        end = page * per_page
+
+
+        serializer = FiapSerializer(fiap[start:end], many=True)
+        return Response({
+            'data': serializer.data,
+            'total': total,
+            'page': page,
+            'last_page': math.ceil(total / per_page)
+        })
+
+
+
 class FrequenciaAPIView(APIView):
     """
     API Frequencia
@@ -250,7 +284,7 @@ class FrequenciaAPIView(APIView):
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        frequencia = Frequencia.objects.get(id=pk)
+        frequencia = Frequencia.objects.get(fiap=pk)
         serializer = FrequenciaSerializer(frequencia, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -288,7 +322,7 @@ class AproveitamentoAPIView(APIView):
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        aproveitamento = Aproveitamento.objects.get(id=pk)
+        aproveitamento = Aproveitamento.objects.get(fiap=pk)
         serializer = AproveitamentoSerializer(aproveitamento, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -326,7 +360,7 @@ class AprendizagemAPIView(APIView):
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        aprendi = Aprendizagem.objects.get(id=pk)
+        aprendi = Aprendizagem.objects.get(fiap=pk)
         serializer = AprendizagemSerializer(aprendi, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -364,7 +398,7 @@ class OcorrenciaAPIView(APIView):
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        ocorrencia = Ocorrencia.objects.get(id=pk)
+        ocorrencia = Ocorrencia.objects.get(fiap=pk)
         serializer = OcorrenciaSerializer(ocorrencia, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
@@ -402,7 +436,7 @@ class ObservacaoAPIView(APIView):
         # return Response(serializer.data, status=status.HTTP_201_
 
     def put(self, request, pk=''):
-        observa = Observacao.objects.get(id=pk)
+        observa = Observacao.objects.get(fiap=pk)
         serializer = ObservacaoSerializer(observa, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()

@@ -21,6 +21,7 @@ urlpatterns = [
     path('assinatura/<int:pk>/', AssinaturaAPIView.as_view(), name='assinaturaParameters'),
 
     path('fiap/', FiapAPIView.as_view(), name='fiap'),
+    path('fiaps', FiapBackendAPIView.as_view(), name='fiaps'),
     path('fiap/<int:pk>/', FiapAPIView.as_view(), name='fiapParameters'),
 
     path('frequencia/', FrequenciaAPIView.as_view(), name='frequencia'),

@@ -5,6 +5,7 @@ class TurmaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Turma
         fields = [
+            'id',
             'cod_turma',
             'nome',
             'periodo',
@@ -15,6 +16,7 @@ class AlunoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Aluno
         fields = [
+            'id',
             'nome',
             'ra',
             'cpf',
@@ -25,6 +27,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
         fields = [
+            'id',
             'nome',
             'identificador',
             'senha',
@@ -35,6 +38,7 @@ class MateriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Materia
         fields = [
+            'id',
             'nome',
         ]
 
@@ -42,6 +46,7 @@ class AssinaturaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Assinatura
         fields = [
+            'id',
             'docente',
             'coordenador',
             'social',
@@ -54,6 +59,7 @@ class FiapSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fiap
         fields = [
+            'id',
             'progresso',
             'aluno',
             'turma',
@@ -67,6 +73,7 @@ class FrequenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Frequencia
         fields = [
+            'id',
             'aulasprevistas',
             'ausencias',
             'fiap',
@@ -76,6 +83,7 @@ class AproveitamentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Aproveitamento
         fields = [
+            'id',
             'materia',
             'notamedia',
             'notaaluno',
@@ -87,6 +95,7 @@ class AprendizagemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Aprendizagem
         fields = [
+            'id',
             'atencao',
             'compreensao',
             'comprometimento',
@@ -99,6 +108,7 @@ class OcorrenciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ocorrencia
         fields = [
+            'id',
             'advverbal',
             'advescrita',
             'afastamento',
@@ -110,6 +120,7 @@ class ObservacaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observacao
         fields = [
+            'id',
             'observacao',
             'fiap',
             'data',
@@ -119,6 +130,7 @@ class EmpresaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observacao
         fields = [
+            'id',
             'nome',
         ]
 
@@ -126,6 +138,7 @@ class ImportanciaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observacao
         fields = [
+            'id',
             'nivel',
         ]
 
@@ -133,6 +146,7 @@ class SatisfacaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observacao
         fields = [
+            'id',
             'nivel',
         ]
 
@@ -140,6 +154,7 @@ class PerguntaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observacao
         fields = [
+            'id',
             'descricao',
         ]
 
@@ -147,6 +162,7 @@ class FormularioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Observacao
         fields = [
+            'id',
             'aluno',
             'pergunta',
             'importancia',
