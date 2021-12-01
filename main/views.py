@@ -231,7 +231,7 @@ class FiapBackendAPIView(APIView):
         s = request.GET.get('s')
         sort = request.GET.get('sort')
         page = int(request.GET.get('page', 1))
-        per_page = 3
+        per_page = 5
         fiap = Fiap.objects.all()
 
         if s:
