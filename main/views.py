@@ -81,7 +81,7 @@ class AlunoAPIView(APIView):
         aluno.delete()
         return Response('Aluno Apagado')
 
-class ColaboradorAPIView(APIView):
+class UsuarioAPIView(APIView):
     """
     API Colaborador
     """
