@@ -170,7 +170,11 @@ class AssinaturaAPIView(APIView):
 
 
     def post(self, request):
+        # print(request.data[0]['fiap'])
         serializer = AssinaturaSerializer(data=request.data, many=True)
+        fiap = Fiap.objects.all().last()
+        request.data[0]['fiap'] = fiap.id
+        # print(request.data[0]['fiap'])
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response({"msg": "Inserido com sucesso"})
