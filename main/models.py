@@ -62,11 +62,11 @@ class Fiap(models.Model):
 
 
 class Assinatura(models.Model):
-    docente = models.TextField()
-    coordenador = models.TextField()
-    social = models.TextField()
-    aluno = models.TextField()
-    responsavel = models.TextField()
+    docente = models.TextField(null=True, default='')
+    coordenador = models.TextField(null=True, default='')
+    social = models.TextField(null=True, default='')
+    aluno = models.TextField(null=True, default='')
+    responsavel = models.TextField(null=True, default='')
     fiap = models.ForeignKey(Fiap, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
