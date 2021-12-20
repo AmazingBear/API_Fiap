@@ -6,12 +6,12 @@ import pandas as pd
 
 class Turma(models.Model):
     cod_turma = models.CharField(max_length=50, default='')
-    nome = models.CharField(max_length=50)
-    periodo = models.CharField(max_length=15, default='1',
+    nome = models.CharField(max_length=50, null=True, blank=True)
+    periodo = models.CharField(null=True, blank=True, max_length=15, default='1',
                     choices=(('1','Manhã'),
                              ('2','Tarde'),
                              ('3','Noite')))
-    dataInicio = models.DateTimeField(default=datetime.datetime.now())
+    dataInicio = models.DateTimeField(default=datetime.datetime.now(),null=True, blank=True)
 
     def __str__(self):
         return self.cod_turma
@@ -50,8 +50,8 @@ class Fiap(models.Model):
                              ('2','Em Análise'),
                              ('3','Finalizada')))
 
-    aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
-    turma = models.ForeignKey(Turma, on_delete=models.CASCADE)
+    aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE,null=True, blank=True)
+    turma = models.ForeignKey(Turma, on_delete=models.CASCADE, null=True, blank=True)
     materia = models.ForeignKey(Materia, on_delete=models.CASCADE, null=True)
     dataInicio = models.DateTimeField(default=datetime.datetime.now())
     dataFinal = models.DateTimeField(null=True, default=datetime.datetime.now())
@@ -67,15 +67,15 @@ class Assinatura(models.Model):
     social = models.TextField(null=True, default='')
     aluno = models.TextField(null=True, default='')
     responsavel = models.TextField(null=True, default='')
-    fiap = models.ForeignKey(Fiap, blank=True, on_delete=models.CASCADE)
+    fiap = models.ForeignKey(Fiap,null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.id)
 
 
 class Frequencia(models.Model):
-    aulasprevistas = models.IntegerField()
-    ausencias = models.IntegerField()
+    aulasprevistas = models.IntegerField(null=True, blank=True)
+    ausencias = models.IntegerField(null=True, blank=True)
     fiap = models.ForeignKey(Fiap, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -83,8 +83,8 @@ class Frequencia(models.Model):
 
 class Aproveitamento(models.Model):
     materia = models.ForeignKey(Materia, blank=True, on_delete=models.CASCADE)
-    notamedia = models.IntegerField()
-    notaaluno = models.IntegerField()
+    notamedia = models.IntegerField(null=True, blank=True)
+    notaaluno = models.IntegerField(null=True, blank=True)
     notarec = models.IntegerField(null=True, blank=True)
     fiap = models.ForeignKey(Fiap, blank=True, on_delete=models.CASCADE)
 
@@ -113,8 +113,8 @@ class Ocorrencia(models.Model):
         return str(self.id)
 
 class Observacao(models.Model):
-    observacao = models.CharField(max_length=500)
-    fiap = models.ForeignKey(Fiap, on_delete=models.CASCADE)
+    observacao = models.CharField(max_length=500, null=True, blank=True)
+    fiap = models.ForeignKey(Fiap, on_delete=models.CASCADE, null=True, blank=True)
     data = models.DateTimeField(default=datetime.datetime.now())
 
     def __str__(self):

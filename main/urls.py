@@ -2,9 +2,6 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('cadTurma/', cadTurma, name='cadTurma'),
-
     path("turma/", TurmaAPIView.as_view(), name='turma'),
     path('turma/<int:pk>/', TurmaAPIView.as_view(), name='turmaParameters'),
 
@@ -38,4 +35,8 @@ urlpatterns = [
 
     path('observacao/', ObservacaoAPIView.as_view(), name='observacao'),
     path('observacao/<int:pk>/', ObservacaoAPIView.as_view(), name='observacaoParameters'),
+
+    path('avancarTurma/', Avancar_turmasAPIView.as_view(), name='avancar_turma'),
+
+    path('antecederTurma/', Anteceder_turmasAPIView.as_view(), name='avancar_turma'),
 ]

@@ -451,96 +451,72 @@ class ObservacaoAPIView(APIView):
         observa.delete()
         return Response('Observacao Apagada')
 
+class Avancar_turmasAPIView(APIView):
+    def get(self, request):
+        turmas = Turma.objects.all()
+        turmas_list = []
+        numInArray = 0
+        novas_turmas = []
+        # print('part1')
+        # for turma in turmas:
+        #     turmas_list.append(turma)
+        print(turmas)
 
+        for turma in turmas:
+            numInArray = 0
+            for carac in str(turma):
+                if carac.isdecimal():
+                    caracter = carac
+                    temp = int(carac) + 1
+                    temp_turma = str(turma)
+                    tur = temp_turma.replace(temp_turma[numInArray], str(temp))
+                    novas_turmas.append(tur)
+                    break
+                numInArray += 1
+            turma_atual = Turma.objects.filter(id=turma.id).first()
+            # print(turma_atual)
+            turma_atualizada = { 'cod_turma' : novas_turmas[-1] }
+            serializer = TurmaSerializer(turma_atual, data=turma_atualizada)
+            serializer.is_valid(raise_exception=True)
+            # print(serializer)
+            # print(serializer.data)
+            serializer.save()
 
+        turmas2 = Turma.objects.all()
+        serializerTurma = ObservacaoSerializer(turmas2, many=True)
+        return Response("Atualizada com Sucesso!!!")
 
+class Anteceder_turmasAPIView(APIView):
+    def get(self, request):
+        turmas = Turma.objects.all()
+        turmas_list = []
+        numInArray = 0
+        novas_turmas = []
+        # print('part1')
+        # for turma in turmas:
+        #     turmas_list.append(turma)
+        print(turmas[0].id)
 
+        for turma in turmas:
+            numInArray = 0
+            for carac in str(turma):
+                if carac.isdecimal():
+                    caracter = carac
+                    temp = int(caracter) - 1
+                    temp_turma = str(turma)
+                    tur = temp_turma.replace(temp_turma[numInArray], str(temp))
+                    novas_turmas.append(tur)
+                    break
+                numInArray += 1
+            turma_atual = Turma.objects.filter(id=turma.id).first()
+            # print(turma_atual)
+            turma_atualizada = { 'cod_turma' : novas_turmas[-1] }
+            serializer = TurmaSerializer(turma_atual, data=turma_atualizada)
+            serializer.is_valid(raise_exception=True)
+            # print(serializer)
+            # print(serializer.data)
+            serializer.save()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def home(request):
-    return render(request, 'home/index.html')
-
-def cadAluno(request):
-    if request.method != "POST":
-        turma = Turma.objects.all()
-        return render(request, 'home/cadAluno.html', {"dados": turma})
-
-    nome = request.POST['nome']
-    ra = request.POST['ra']
-    turma = request.POST['turma']
-    print(turma)
-
-    A = Aluno()
-    A.nome = nome
-    A.ra = ra
-    A.turma_id = turma
-
-    A.save()
-    return redirect('home')
-
-
-def cadColaborador(request):
-    if request.method != "POST":
-        return render(request, 'home/cadColaborador.html')
-
-    nome = request.POST['nome']
-    nif = request.POST['nif']
-    senha = request.POST['senha']
-    nivelAcesso = request.POST['nivelAcesso']
-
-    C = Colaborador()
-    C.nome = nome
-    C.nif = nif
-    C.senha = senha
-    C.nivelAcesso = nivelAcesso
-
-    C.save()
-    return redirect('home')
-
-
-def cadTurma(request):
-    if request.method != "POST":
-        return render(request, 'home/cadTurma.html')
-
-    nome = request.POST['nome']
-    periodo = request.POST['periodo']
-
-    T = Turma()
-    T.nome = nome
-    T.periodo = periodo
-
-    T.save()
-    return redirect('home')
-
-
-def cadFiap(request):
-    if request.method != "POST":
-        aluno = Aluno.objects.all()
-        turma = Turma.objects.all()
-        colab = Colaborador.objects.order_by('-id').filter(
-            nivelAcesso=1
-        )
-        return render(request, 'home/cadFiap.html', {"aluno": aluno, 'colabo': colab, 'turma': turma})
-
-    aluno = Aluno()
-    colaborador = Colaborador()
-    turma = Turma()
-    freq = Frequencia()
-    obser = Observacao()
-    ocorren = Ocorrencia()
-    aprendizagem = Aprendizagem()
-    aproveitamento = Aproveitamento()
+        turmas2 = Turma.objects.all()
+        serializerTurma = ObservacaoSerializer(turmas2, many=True)
+        return Response("Atualizada com Sucesso!!!")
